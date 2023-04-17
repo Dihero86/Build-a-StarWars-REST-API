@@ -23,9 +23,7 @@ class Favorites(db.Model):
             "user_id": self.user_id,
             "user":self.user.serialize(),
             "planet_id": self.planet_id,
-        
-            "people_id": self.people_id,
-    
+            "people_id": self.people_id,   
         }
 
     def serialize_fav_user(self):

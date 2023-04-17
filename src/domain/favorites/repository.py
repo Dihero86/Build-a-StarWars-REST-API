@@ -5,7 +5,7 @@ def add_favorite_planet(user_id,planet_id):
     new_favorite=Favorites(user_id, planet_id, None)
     db.session.add(new_favorite)
     db.session.commit()
-    return new_favorite.serialize_fav()
+    return new_favorite
 
 def add_favorite_people():
     return
