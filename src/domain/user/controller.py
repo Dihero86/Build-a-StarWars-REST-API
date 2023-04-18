@@ -11,8 +11,10 @@ def create_user(body):
 def get_all_user():
     return response_ok(Repository.get_all_user(),200)
 
-def get_favorites_user(id):
-    user_favorites = Repository.get_favorites_user(id)
-    if user_favorites is None:
-        return response_error('user not found', 404)
-    return response_ok(user_favorites, 200)
+def get_one_user(id):
+    user= Repository.get_one_user(id)
+    print(user)
+    if user is None:
+        return response_error("user not found", 404)
+    return response_ok(user, 200)
+

@@ -17,19 +17,20 @@ class Favorites(db.Model):
     def __repr__(self):
         return '<Favorites %r>' % self.user_id
 
-    def serialize_fav(self):
+    def serialize_favorites_planets(self):
         return {
             "id": self.id,
             "user_id": self.user_id,
             "user":self.user.serialize(),
             "planet_id": self.planet_id,
-            "people_id": self.people_id,   
+            "planet": self.planet.serialize(),  
         }
 
-    def serialize_fav_user(self):
+    def serialize_favorites_people(self):
         return {
-            
-            "planet_id": self.planet_id,
-            "people_id": self.people_id
-            
+            "id": self.id,
+            "user_id": self.user_id,
+            "user":self.user.serialize(),
+            "people_id": self.people_id,
+            "people": self.people.serialize(),  
         }

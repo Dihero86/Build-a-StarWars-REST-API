@@ -11,8 +11,9 @@ def get_all_user():
     serialize_user= list(map(lambda user: user.serialize(),all_users))
     return serialize_user
 
-def get_favorites_user(id):
+def get_one_user(id):
     user= User.query.get(id)
     if user is None:
         return user
-    return user.serialize_favorites()
+    return user.serialize()
+

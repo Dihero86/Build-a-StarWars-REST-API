@@ -12,6 +12,8 @@ def user_route(app):
     def get_all_user():
         return Controller.get_all_user()
 
-    @app.route('/users/favorites/<int:id>',methods=['GET'])
-    def get_favorites_user(id):
-        return Controller.get_favorites_user(id)
+    @app.route('/users/<int:id>', methods=['GET'])
+    def get_one_user(id):
+        return Controller.get_one_user(id)
+
+  
